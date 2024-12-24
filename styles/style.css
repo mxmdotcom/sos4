@@ -150,6 +150,20 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Black.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --main-bg-color:#f2896f;
   --main-bg-color-l: #efb1a2;
