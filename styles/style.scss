@@ -1,10 +1,10 @@
-@use 'normalize';
-@use 'fonts';
-@use 'variables';
-@use 'mixins';
-@use 'media';
+@import
+  'normalize',
+  'fonts',
+  'mixins',
+  'media',
+  'variables',
+  'utils',
+  'globals';
 
-@use 'utils';
-@use 'globals';
-
-@use 'blocks/header';
+  @import 'blocks/header';

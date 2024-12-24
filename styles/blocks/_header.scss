@@ -1,12 +1,54 @@
 .header {
-    padding-top: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--header-bg-color);
 
     &__inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
         column-gap: 40px;
+    }
+
+    &__menu {
+        margin: 0 auto;
+        /*font-size: 20px;*/
         
+
+        &-list {
+            display: flex;
+            align-items: center;
+            column-gap: 40px;
+        }
+
+        &-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            height: 48px;
+/*font-size: 12.8px;*/
+            @include fluid-text (13px, 12px);
+
+            @include hover {
+                &::after {
+                width: 100%;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                translate: -50% ;
+                width: 0;
+                height: 2px;
+                background-color: currentColor;
+                transition-duration: inherit;
+            }
+        }
+
+
     }
 
 }

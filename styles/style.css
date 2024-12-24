@@ -164,6 +164,10 @@ svg * {
   font-style: normal;
   font-display: swap;
 }
+h1 {
+  font-size: clamp(24px, 4.4444444444vw, 64px);
+}
+
 :root {
   --main-bg-color:#f2896f;
   --main-bg-color-l: #efb1a2;
@@ -190,20 +194,16 @@ svg * {
   --transition-duration: 0.2s;
   --header-bg-color: rgba(240, 245, 247, 1);
   --maxim: 1rem;
-  /* 
-     @include desktop {
-       --section-padding-y: 40px;
-     }
-
-     @include mobile {
-       --section-padding-y: 30px;
-     }
-
-   */
 }
-
-h1 {
-  font-size: clamp(24px, 4.4444444444 vw, 64px);
+@media (max-width: 1280px) {
+  :root {
+    --section-padding-y: 40px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --section-padding-y: 30px;
+  }
 }
 
 .container {
@@ -226,23 +226,23 @@ h1 {
   clip: rect(0 0 0 0) !important;
 }
 
-.hidden-mobile {
-  /*    @include mobile {
-        display: none !important;
-      }*/
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
 }
 
-.visible-mobile {
-  /*   @include mobile-above {
-       display: none !important;
-     }*/
+@media (min-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
 }
 
 body {
   font-family: var(--font-family-base);
   font-weight: 400;
   /*font-size: 18px;*/
-  /*@include fluid-text(18, 16);*/
+  font-size: clamp(16px, 1.25vw, 18px);
   line-height: 1.28;
   color: var(--color-dark);
   background-color: var(--color-light);
@@ -265,24 +265,26 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
-/*
 h1, .h1 {
-  @include fluid-text(60, 43);
+  font-size: clamp(43px, 4.1666666667vw, 60px);
 }
 
 h2, .h2 {
-  @include fluid-text(40, 36);
+  font-size: clamp(36px, 2.7777777778vw, 40px);
 }
 
 h3, .h3 {
-  @include fluid-text(30, 26);
+  font-size: clamp(26px, 2.0833333333vw, 30px);
 }
 
 h4, .h4 {
-  @include fluid-text(20, 18);
-}*/
+  font-size: clamp(18px, 1.3888888889vw, 20px);
+}
+
 .header {
-  padding-top: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--header-bg-color);
 }
 .header__inner {
   display: flex;
@@ -290,4 +292,43 @@ h4, .h4 {
   align-items: center;
   -moz-column-gap: 40px;
        column-gap: 40px;
+}
+.header__menu {
+  margin: 0 auto;
+  /*font-size: 20px;*/
+}
+.header__menu-list {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.header__menu-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  /*font-size: 12.8px;*/
+  font-size: clamp(12pxpx, 0.9027777778pxvw, 13pxpx);
+}
+@media (hover: hover) {
+  .header__menu-link:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .header__menu-link:active::after {
+    width: 100%;
+  }
+}
+.header__menu-link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50%;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition-duration: inherit;
 }/*# sourceMappingURL=style.css.map */
