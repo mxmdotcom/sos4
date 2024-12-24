@@ -167,7 +167,127 @@ svg * {
 :root {
   --main-bg-color:#f2896f;
   --main-bg-color-l: #efb1a2;
+  --color-dark: #191A23;
+  --color-dark-alt: #292A32;
+  --color-light: #FFFFFF;
+  --color-accent: #B9FF66;
+  --color-gray: #F3F3F3;
+  --color-gray-alt: #898989;
+  --border: 1px solid var(--color-dark);
+  --border-radius: 14px;
+  --border-radius-small: 7px;
+  --border-radius-large: 45px;
+  --shadow: 0 5px 0 0 var(--color-dark);
   --font-size: clamp(1.13rem, calc(0.1rem + 5.13vw), 0.25rem);
   --btn-pd: 4rem;
   --btn-clr: #fff;
+  --font-family-base: "Roboto", sans-serif;
+  --container-width: 1240px;
+  --container-padding-x: 20px;
+  --section-padding-y: 70px;
+  --input-height: 59px;
+  --button-height: 68px;
+  --transition-duration: 0.2s;
+  --header-bg-color: rgba(240, 245, 247, 1);
+  --maxim: 1rem;
+  /* 
+     @include desktop {
+       --section-padding-y: 40px;
+     }
+
+     @include mobile {
+       --section-padding-y: 30px;
+     }
+
+   */
+}
+
+h1 {
+  font-size: clamp(24px, 4.4444444444 vw, 64px);
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  /* @include visually-hidden;*/
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  -webkit-clip-path: inset(100%) !important;
+          clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+}
+
+.hidden-mobile {
+  /*    @include mobile {
+        display: none !important;
+      }*/
+}
+
+.visible-mobile {
+  /*   @include mobile-above {
+       display: none !important;
+     }*/
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  /*font-size: 18px;*/
+  /*@include fluid-text(18, 16);*/
+  line-height: 1.28;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+}
+
+/*
+h1, .h1 {
+  @include fluid-text(60, 43);
+}
+
+h2, .h2 {
+  @include fluid-text(40, 36);
+}
+
+h3, .h3 {
+  @include fluid-text(30, 26);
+}
+
+h4, .h4 {
+  @include fluid-text(20, 18);
+}*/
+.header {
+  padding-top: 40px;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
 }/*# sourceMappingURL=style.css.map */
